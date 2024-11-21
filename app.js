@@ -3,7 +3,7 @@ import { PORT } from "./Configs.js";
 import { upload, getFileParts } from "./uploadHandler.js";
 import { model } from "./GoogleAI.js";
 import cors from "cors";
-
+import { removeAllFiles } from "./deleteFiles.js";
 const app = express();
 
 app.use(cors());
@@ -30,7 +30,7 @@ app.post("/upload", upload.array("files", 10), (req, res) => {
     res.send(result);
 
     //delete file after processing
-    //removeAllFiles("uploads");
+    removeAllFiles("uploads");
   });
 });
 
