@@ -18,6 +18,8 @@ app.listen(PORT, () => {
 });
  */
 app.post("/upload", upload.array("files", 10), (req, res) => {
+  console.log("Got Request!");
+
   // 'files' is the name of the input field in the HTML form,
   // and 10 is the max number of files allowed to upload
   if (!req.files) {
