@@ -7,7 +7,7 @@ import { removeAllFiles } from "./deleteFiles.js";
 const app = express();
 
 const textprompt =
-  "give me invoice details with these details as json : Serial Number, Customer Name, product name, qty,tax, Total Amount and Date.give me product details with these details as json : Name, Quantity, Unit Price,Tax, Price with Tax (all required).give me Customers Tab with these details as json :Customer Name,Phone Number, and Total Purchase Amount.";
+  "Invoices : Table with columns Serial Number, Customer Name, product name, qty,tax, Total Amount and Date. (All required columns) - extra information is up to youProducts : Display a table with the following columns: Name, Quantity, Unit Price,Tax, Price with Tax (all required). The Discount column is optional but can be included foradded detail.Customers : Display a table with the following required columns: Customer Name,Phone Number, and Total Purchase Amount. Additional fields can be added at yourdiscretion for more comprehensive customer data. generate a json containing invoices,customers,products keys arrays have the specified details combine all files details";
 app.use(cors());
 
 app.listen(PORT, () => {
