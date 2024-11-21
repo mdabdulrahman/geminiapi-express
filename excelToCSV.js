@@ -17,7 +17,7 @@ export function convertXLSToCSV(filePath) {
       const fileName =
         path.basename(filePath, path.extname(filePath)) + sheetName + ".csv";
       fs.writeFileSync("uploads/" + fileName, csvContent);
-      csvPaths.push("uploads\\" + fileName);
+      csvPaths.push(path.resolve("uploads", fileName));
     });
 
     return csvPaths;
