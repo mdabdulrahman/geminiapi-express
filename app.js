@@ -6,6 +6,8 @@ import cors from "cors";
 import { removeAllFiles } from "./deleteFiles.js";
 const app = express();
 
+const textprompt =
+  "give me invoice details with these details as json : Serial Number, Customer Name, product name, qty,tax, Total Amount and Date.give me product details with these details as json : Name, Quantity, Unit Price,Tax, Price with Tax (all required).give me Customers Tab with these details as json :Customer Name,Phone Number, and Total Purchase Amount.";
 app.use(cors());
 
 app.listen(PORT, () => {
@@ -39,7 +41,7 @@ async function generate(fileParts) {
   const result = await model.generateContent([
     ...fileParts,
     {
-      text: "first tell the names of file i send to you Give a json format of this invoice details combine these files and also how many files i given to you don't neglect single data by lazieness give it all data throughly",
+      text: textprompt,
     },
   ]);
 
