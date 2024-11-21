@@ -31,7 +31,7 @@ app.post("/upload", upload.array("files", 10), (req, res) => {
     res.send(result);
 
     //delete file after processing
-    removeAllFiles("uploads");
+    //removeAllFiles("uploads");
   });
 });
 
