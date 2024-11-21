@@ -7,7 +7,7 @@ import { removeAllFiles } from "./deleteFiles.js";
 const app = express();
 
 const textprompt =
-  "Invoices : Table with columns Serial Number, Customer Name, product name, qty,tax, Total Amount and Date. (All required columns) - extra information is up to youProducts : Display a table with the following columns: Name, Quantity, Unit Price,Tax, Price with Tax (all required). The Discount column is optional but can be included foradded detail.Customers : Display a table with the following required columns: Customer Name,Phone Number, and Total Purchase Amount. Additional fields can be added at yourdiscretion for more comprehensive customer data. generate a json containing invoices,customers,products keys arrays have the specified details combine all files details";
+  "Invoices : Table with columns  Customer Name, product name, qty,tax, Total Amount and Date. (All required columns)  : Display a table with the following columns: Name, Quantity, Unit Price,Tax, Price with Tax (all required). The Discount column is optional but can be included foradded detail.Customers : Display a table with the following required columns: Customer Name,Phone Number, and Total Purchase Amount.  generate a json containing invoices,customers,products keys arrays have the specified details combine all files details, i don't need any additional texts only data if you didn't received any file then just reply with []";
 app.use(cors());
 
 app.listen(PORT, () => {
