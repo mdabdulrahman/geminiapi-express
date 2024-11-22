@@ -7,7 +7,7 @@ import { removeAllFiles } from "./deleteFiles.js";
 const app = express();
 
 const textprompt =
-  "combine all files details into one json like this {invoices:[{invoice_no:,customer_name:,customer_ph_no,total_amount:,tax:,date:,products:[{product_name:,qty:, tax:,unit_price:,amount:,discount:,}...]}]}, if you can't able to find any info just put null i don't need any additional texts only data if you didn't received any file then just reply with []";
+  "combine all files details into one json like this {invoices:[{invoice_no:,customer_name:,customer_ph_no,total_amount:,tax:,date:,products:[{product_name:,qty:, tax:,unit_price:,amount:,discount:,}...]}]}, if you can't able to find any info just put null.provide a valid json i will put response in JSON.parse() so be careful. i don't need any additional texts only data if you didn't received any file then just reply with []";
 app.use(cors());
 
 app.listen(PORT, () => {
