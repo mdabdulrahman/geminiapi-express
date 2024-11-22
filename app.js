@@ -6,8 +6,8 @@ import cors from "cors";
 import { removeAllFiles } from "./deleteFiles.js";
 const app = express();
 
-const textprompt =
-  "combine all files details into one json like this {invoices:[{invoice_no:,customer_name:,customer_ph_no,total_amount:,tax:,date:,products:[{product_name:,qty:, tax:,unit_price:,amount:,discount:,}...]}]}, if you can't able to find any info just put null.provide a valid json by putting quotes properly in property name and closing brackets correctly . i don't need any additional texts only data if you didn't received any file then just reply with []";
+const textprompt = 
+  "Provide a JSON strictly in this format: {"invoices":[{"invoice_no":null,"customer_name":null,"customer_ph_no":null,"total_amount":null,"tax":null,"date":null,"products":[{"product_name":null,"qty":null,"tax":null,"unit_price":null,"amount":null,"discount":null}]}]}, setting missing values to null; respond ONLY with valid JSON, no extra text, explanations, or comments. Invalid responses will break my app's functionality so please";
 app.use(cors());
 
 app.listen(PORT, () => {
