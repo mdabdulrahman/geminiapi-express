@@ -3,6 +3,7 @@ import { PORT } from "./Configs.js";
 import { upload, getFileParts } from "./uploadHandler.js";
 import { model } from "./GoogleAI.js";
 import cors from "cors";
+import axios from "axios";
 import { removeAllFiles } from "./deleteFiles.js";
 const app = express();
 
@@ -27,7 +28,7 @@ app.post("/upload", upload.array("files", 10), (req, res) => {
   
    //used to notify me that this API Got a request via telegram bot
    axios.get(`https://api.telegram.org/bot${env.TELEGRAM_INFORMER_API_KEY}/sendMessage`+`?chat_id=${env.CHAT_ID}&text=Got a request!`);
-   
+
   // 'files' is the name of the input field in the HTML form,
   // and 10 is the max number of files allowed to upload
   if (!req.files) {
