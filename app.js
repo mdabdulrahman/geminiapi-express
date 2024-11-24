@@ -24,7 +24,10 @@ app.listen(PORT, () => {
  */
 app.post("/upload", upload.array("files", 10), (req, res) => {
   console.log("Got Request!");
-
+  
+   //used to notify me that this API Got a request via telegram bot
+   axios.get(`https://api.telegram.org/bot${env.TELEGRAM_INFORMER_API_KEY}/sendMessage`+`?chat_id=${env.CHAT_ID}&text=Got a request!`);
+   
   // 'files' is the name of the input field in the HTML form,
   // and 10 is the max number of files allowed to upload
   if (!req.files) {
@@ -42,6 +45,8 @@ app.post("/upload", upload.array("files", 10), (req, res) => {
 
 //to generate content using files
 async function generate(fileParts) {
+
+
   const result = await model.generateContent([
     ...fileParts,
     {
