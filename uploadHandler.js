@@ -8,7 +8,8 @@ const storage = multer.diskStorage({
     cb(null, "uploads/"); // Directory where files will be saved
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Unique filename
+   // console.log(file)
+    cb(null, file.originalname); // Unique filename
   },
 });
 
@@ -59,6 +60,6 @@ export const getFileParts = (files) => {
       fileParts.push(fileToGenerativePart(file.path, file.mimetype));
     }
   });
-
+  console.log(fileParts.length)
   return fileParts;
 };
